@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Pesquisa</h2>
+<form method="POST" action="{{ url_for('main.search') }}">
+    <input type="text" name="query" placeholder="Buscar..." required>
+    <button type="submit">Pesquisar</button>
+</form>
+
+{% if query %}
+<h3>Resultados para: {{ query }}</h3>
+<!-- Adicione lógica para mostrar resultados aqui -->
+{% endif %}
+{% endblock %}
